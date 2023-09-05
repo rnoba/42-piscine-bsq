@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ovasconc <otaviocavasc2@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:17:18 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 12:22:28 by rnogueir         ###   ########.org.br   */
+/*   Updated: 2023/09/05 13:24:30 by ovasconc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,6 @@ char	**ft_split(char *buff, char del);
 
 int		ft_countlines(char *buff);
 
-#endif // FT_UTILS_H 
+int	ft_strlen(char *str);
+
+#endif // FT_UTILS_H

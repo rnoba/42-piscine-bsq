@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ovasconc <otaviocavasc2@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:21:53 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 12:50:32 by rnogueir         ###   ########.org.br   */
+/*   Updated: 2023/09/05 13:24:15 by ovasconc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "utils.h"
+
 
 void	ft_putcharfd(char c, int fd)
 {
@@ -23,6 +23,16 @@ void	ft_putstrfd(char *str, int fd)
 		ft_putcharfd(*str, fd);
 		str++;
 	}
+}
+
+int	ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
 void	ft_putstr(char *str)
@@ -44,7 +54,7 @@ int	ft_countlines(char *buff)
 	while(*buff)
 	{
 		if(*buff == '\n')
-			lines++; 
+			lines++;
 		buff++;
 	}
 	return (lines);
@@ -53,7 +63,7 @@ int	ft_countlines(char *buff)
 static	int ft_countdel(char *str, char del)
 {
 	int count;
-	
+
 	count = 0;
 	while(*str)
 	{

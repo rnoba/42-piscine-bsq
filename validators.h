@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   validators.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ovasconc <otaviocavasc2@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:12:14 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 12:19:30 by rnogueir         ###   ########.org.br   */
+/*   Updated: 2023/09/05 13:23:33 by ovasconc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef VALIDATORS_H
 # define VALIDATORS_H
 
@@ -22,4 +23,6 @@ typedef struct s_mapstate
 
 s_mapstate*	ft_checkmap(char *BUFFER);
 
-#endif // FT_VALIDATORS_H 
+void	is_valid_map(char **map);
+
+#endif // FT_VALIDATORS_H
