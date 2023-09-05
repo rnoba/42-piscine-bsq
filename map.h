@@ -6,7 +6,7 @@
 /*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 13:02:18 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 16:51:31 by rnogueir         ###   ########.org.br   */
+/*   Updated: 2023/09/05 19:27:51 by rnogueir         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef MAP_H
@@ -19,10 +19,18 @@
 typedef struct s_mapstate
 {
 	int		lines;
+	int		cols;
 	char	empty;
 	char	obstacle;
 	char	full;
 }	s_mapstate;
+
+typedef struct s_square
+{
+	int		i;
+	char	j;
+	char	size;
+}	s_square;
 
 s_mapstate*	ft_checkmap(char **m);
 
