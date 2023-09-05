@@ -6,11 +6,10 @@
 /*   By: ovasconc <otaviocavasc2@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:25:13 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 18:37:55 by rnogueir         ###   ########.org.br   */
+/*   Updated: 2023/09/05 18:46:36 by rnogueir         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "utils.h"
 #include "validators.h"
 #include "map.h"

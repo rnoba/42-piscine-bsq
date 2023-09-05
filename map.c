@@ -6,7 +6,7 @@
 /*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 13:05:40 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 18:37:31 by rnogueir         ###   ########.org.br   */
+/*   Updated: 2023/09/05 18:45:14 by rnogueir         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,6 @@ static	int	ft_trydraw(char **map, int size, int i, int j, s_mapstate *s)
 {
 	while(ft_canexpand(map, s->obstacle, size, i, j))
 	{
-		size++;
-		i++;
-		j++;
 	}
 }
 
