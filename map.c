@@ -6,7 +6,7 @@
 /*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 13:05:40 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 18:23:19 by rnogueir         ###   ########.org.br   */
+/*   Updated: 2023/09/05 18:37:31 by rnogueir         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void	ft_read(int fd, char *buff)
 
 	b_read = 0;
 	while(read(fd, buff, BUFFER_SIZE) > 0)
-	{ b_read += 1;
+	{ 
+		b_read += 1;
 	}
 }
 
@@ -56,11 +57,17 @@ static	int ft_canexpand(char **map, char obs, int size, int i, int j)
 
 static	int	ft_trydraw(char **map, int size, int i, int j, s_mapstate *s)
 {
+	while(ft_canexpand(map, s->obstacle, size, i, j))
+	{
+		size++;
+		i++;
+		j++;
+	}
 }
 
 static	void ft_solve_rec(char **map, s_mapstate *s)
 {
-	ft_trydraw(map, 1, 0, 0, s);
+	ft_trydraw(map, 4, 0, 0, s);
 }
 
 void	ft_solve(char **map)
