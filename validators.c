@@ -6,7 +6,7 @@
 /*   By: ovasconc <otaviocavasc2@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:13:30 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 16:43:02 by ovasconc         ###   ########.fr       */
+/*   Updated: 2023/09/05 16:51:07 by ovasconc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static	int	check_instruction_line(char **map)
 {
 	char	*str;
 	int		strlen;
+	int		i;
 
 	str = map[0];
 	strlen = ft_strlen(str);
@@ -45,6 +46,11 @@ static	int	check_instruction_line(char **map)
 	if (str[strlen] == str[strlen - 1] || str[strlen] == str[strlen - 2]
 		|| str[strlen - 1] == str[strlen - 2])
 		return (0);
+
+	while(i < strlen)
+	{
+		if (ft_is_printable)
+	}
 }
 
 void	is_valid_map(char **map)

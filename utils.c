@@ -6,7 +6,7 @@
 /*   By: ovasconc <otaviocavasc2@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 13:28:18 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 14:26:05 by ovasconc         ###   ########.fr       */
+/*   Updated: 2023/09/05 16:48:59 by ovasconc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,4 +115,60 @@ char **ft_split(char *str, char del)
 	}
 	split[idx] = 0;
 	return (split);
+}
+
+static	int	ft_isspace(char c)
+{
+	if (c == ' '
+		|| c == '\t'
+		|| c == '\n'
+		|| c == '\v'
+		|| c == '\f'
+		|| c == '\r')
+		return (1);
+	return (0);
+}
+
+int	ft_atoi(char *str)
+{
+	int	idx;
+	int	ns;
+	int	r;
+
+	idx = 0;
+	ns = 1;
+	r = 0;
+	while(ft_isspace(*str))
+		str++;
+	while (str[idx] != '\0')
+	{
+		if (ft_isspace(str[idx]))
+			break ;
+		if (str[idx] == '-')
+			ns++;
+		if (str[idx] >= '0' && str[idx] <= '9')
+			r = (r * 10) + str[idx] - '0';
+		idx += 1;
+	}
+	if(ns % 2 == 0)
+		return (r * -1);
+	return (r);
+}
+
+int	ft_str_is_printable(char *str)
+{
+	int	i;
+	int	printable;
+
+	i = 0;
+	printable = 1;
+	while (str[i])
+	{
+		if (str[i] < 32 || str[i] > 126)
+		{
+			printable = 0;
+		}
+		i++;
+	}
+	return (printable);
 }
