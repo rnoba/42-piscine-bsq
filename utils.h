@@ -3,19 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ovasconc <otaviocavasc2@gmail.com>         +#+  +:+       +#+        */
+/*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 11:17:18 by rnogueir          #+#    #+#             */
-=======
-/*   Updated: 2023/09/05 13:24:30 by ovasconc         ###   ########.fr       */
->>>>>>> 8cb0cf31e6e8e5ff8ab402c4e973732b46c5b1d1
+/*   Created: 2023/09/05 13:27:29 by rnogueir          #+#    #+#             */
+/*   Updated: 2023/09/05 13:33:07 by rnogueir         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
-
 #ifndef UTILS_H
 # define UTILS_H
 
 #include	<unistd.h>
+#include	<malloc.h>
 #include	<stdlib.h>
 
 #ifndef BUFFER_SIZE
@@ -36,7 +34,6 @@ char	**ft_split(char *buff, char del);
 
 int		ft_countlines(char *buff);
 
-<<<<<<< HEAD
+int		ft_strlen(char *str);
+
 #endif // UTILS_H 
-=======
-int	ft_strlen(char *str);

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ovasconc <otaviocavasc2@gmail.com>         +#+  +:+       +#+        */
+/*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 11:21:53 by rnogueir          #+#    #+#             */
-=======
-/*   Updated: 2023/09/05 13:24:15 by ovasconc         ###   ########.fr       */
->>>>>>> 8cb0cf31e6e8e5ff8ab402c4e973732b46c5b1d1
+/*   Created: 2023/09/05 13:28:18 by rnogueir          #+#    #+#             */
+/*   Updated: 2023/09/05 13:35:57 by rnogueir         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "utils.h"
 
 void	ft_putcharfd(char c, int fd)
 {
