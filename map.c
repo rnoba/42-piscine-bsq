@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ovasconc <otaviocavasc2@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 13:05:40 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 18:23:19 by rnogueir         ###   ########.org.br   */
+/*   Updated: 2023/09/05 18:41:22 by ovasconc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map.h"
-#include <stdio.h> 
+#include <stdio.h>
 
 int	ft_readfile(char *filepath)
 {
@@ -35,8 +35,6 @@ void	ft_read(int fd, char *buff)
 
 static	int ft_isobs(char **map, char obs, int i, int j)
 {
-	if(i < 0 || j < 0)
-		return (1);
 	return (map[i][j] == obs);
 }
 
@@ -50,8 +48,21 @@ void	ft_printmap(char **m)
 	}
 }
 
-static	int ft_canexpand(char **map, char obs, int size, int i, int j)
+static	int	ft_canexpand(char **map, char obs, int size, int i, int j)
 {
+	int	x;
+
+	x = 0;
+	if (map[i][j] == obs)
+		return 0;
+	while (x < size)
+	{
+		if (map[i + size - 1][j + x] == obs)
+			return (0);
+		if (map[i + x][j + size - 1] == obs)
+			return (0);
+		x++;
+	}
 }
 
 static	int	ft_trydraw(char **map, int size, int i, int j, s_mapstate *s)
@@ -68,7 +79,7 @@ void	ft_solve(char **map)
 	int size = ft_atoi(map[0]);
 	s_mapstate* state;
 	int	c = 0;
-	int sizec = size; 
+	int sizec = size;
 	state = malloc(sizeof(s_mapstate));
 	while(sizec > 0)
 	{
