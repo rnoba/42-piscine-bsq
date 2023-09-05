@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validators.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ovasconc <otaviocavasc2@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 13:27:55 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 13:32:42 by rnogueir         ###   ########.org.br   */
+/*   Updated: 2023/09/05 13:49:38 by ovasconc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ovasconc <otaviocavasc2@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 13:28:18 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 13:35:57 by rnogueir         ###   ########.org.br   */
+/*   Updated: 2023/09/05 14:26:05 by ovasconc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,6 @@ char **ft_split(char *str, char del)
 			l++;
 		idx++;
 	}
+	split[idx] = 0;
 	return (split);
 }

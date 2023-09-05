@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ovasconc <otaviocavasc2@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:25:13 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 13:33:53 by rnogueir         ###   ########.org.br   */
+/*   Updated: 2023/09/05 14:28:56 by ovasconc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int main()
 {
 	//int fd;
-	char *test = "a\nb\nc";
+	char *test = "";
 //	char *buffer = malloc(sizeof(char) * BUFFER_SIZE);
 //
 //	if(argc > 1)
@@ -26,6 +26,7 @@ int main()
 //		ft_read(fd, buffer);
 //	}
 //	printf("%s", buffer);
-	is_valid_map(ft_split(test, '\n'));
+	char **map = ft_split(test, '\n');
+	is_valid_map(map);
 	return (0);
 }
