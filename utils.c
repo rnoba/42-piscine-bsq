@@ -6,7 +6,7 @@
 /*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 13:28:18 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 13:35:57 by rnogueir         ###   ########.org.br   */
+/*   Updated: 2023/09/05 16:42:44 by rnogueir         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,44 @@ char **ft_split(char *str, char del)
 			l++;
 		idx++;
 	}
+	split[idx] = 0;
 	return (split);
+}
+
+static	int	ft_isspace(char c)
+{
+	if (c == ' '
+		|| c == '\t'
+		|| c == '\n'
+		|| c == '\v'
+		|| c == '\f'
+		|| c == '\r')
+		return (1);
+	return (0);
+}
+
+int	ft_atoi(char *str)
+{
+	int	idx;
+	int	ns;
+	int	r;
+
+	idx = 0;
+	ns = 1;
+	r = 0;
+	while(ft_isspace(*str))
+		str++;
+	while (str[idx] != '\0')
+	{
+		if (ft_isspace(str[idx]))
+			break ;
+		if (str[idx] == '-')
+			ns++;
+		if (str[idx] >= '0' && str[idx] <= '9')
+			r = (r * 10) + str[idx] - '0';
+		idx += 1;
+	}
+	if(ns % 2 == 0)
+		return (r * -1);
+	return (r);
 }
