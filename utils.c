@@ -6,7 +6,7 @@
 /*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:21:53 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 12:50:32 by rnogueir         ###   ########.org.br   */
+/*   Updated: 2023/09/05 13:08:51 by rnogueir         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 #include "utils.h"

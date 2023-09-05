@@ -1,16 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validators.h                                       :+:      :+:    :+:   */
+/*   map.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 11:12:14 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 13:03:33 by rnogueir         ###   ########.org.br   */
+/*   Created: 2023/09/05 13:02:18 by rnogueir          #+#    #+#             */
+/*   Updated: 2023/09/05 13:05:29 by rnogueir         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef VALIDATORS_H
-# define VALIDATORS_H
+#ifndef MAP_H
+# define MAP_H
 
+typedef struct s_mapstate
+{
+	int		lines;
+	char	empty;
+	char	obstacle;
+	char	full;
+}	s_mapstate;
 
-#endif // FT_VALIDATORS_H 
+s_mapstate*	ft_checkmap(char **m);
+
+int	ft_readfile(char *filepath);
+
+int	ft_read(char *filepath);
+
+#endif // MAP_H 

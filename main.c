@@ -6,7 +6,7 @@
 /*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:25:13 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 12:51:38 by rnogueir         ###   ########.org.br   */
+/*   Updated: 2023/09/05 13:24:08 by rnogueir         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 #include "utils.h"
 #include "validators.h"
 
-int main()
+int main(int argc, char **argv)
 {
-	char *test = "1\n2\n3";
-	char **t = ft_split(test, '\n');
-	printf("%s\n", t[0]);
-	printf("%s\n", t[1]);
-	printf("%s", t[2]);
+	int fd;
+	char *buffer = malloc(sizeof(char) * BUFFER_SIZE);
+
+	if(argc > 1)
+	{
+		fd = ft_readfile(argv[1]);
+		ft_read(fd, buffer);
+	}
+	printf("%s", buffer);
 	return (0);
 }

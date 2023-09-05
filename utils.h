@@ -6,7 +6,7 @@
 /*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:17:18 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 12:22:28 by rnogueir         ###   ########.org.br   */
+/*   Updated: 2023/09/05 13:24:42 by rnogueir         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 #include	<unistd.h>
 #include	<stdlib.h>
+
+#ifndef BUFFER_SIZE
+
+#define BUFFER_SIZE 1024;
+
+#endif
 
 void	ft_showerror();
 
@@ -28,4 +34,4 @@ char	**ft_split(char *buff, char del);
 
 int		ft_countlines(char *buff);
 
-#endif // FT_UTILS_H 
+#endif // UTILS_H 
