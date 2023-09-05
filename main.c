@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ovasconc <otaviocavasc2@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:25:13 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 16:43:55 by rnogueir         ###   ########.org.br   */
+/*   Updated: 2023/09/05 17:50:47 by ovasconc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,9 @@
 #include "validators.h"
 #include "map.h"
 
-int main(int argc, char **argv)
+int main(void)
 {
-	int fd;
-	char *buffer;
+	char *s = "1545.ox\n....\n..o.\n....\noooo";
 
-	buffer = malloc(sizeof(char) * BUFFER_SIZE);
-	if(argc > 1)
-	{
-		fd = ft_readfile(argv[1]);
-		ft_read(fd, buffer);
-		close(fd);
-		ft_solve(ft_split(buffer, '\n'));
-	} else 
-		ft_read(0, buffer);
-//	printf("%s", buffer);
-	return (0);
+	ft_is_valid_map(ft_split(s, '\n'));
 }

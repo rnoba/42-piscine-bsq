@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ovasconc <otaviocavasc2@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 13:27:29 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 16:34:56 by rnogueir         ###   ########.org.br   */
+/*   Updated: 2023/09/05 16:56:30 by ovasconc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef UTILS_H
 # define UTILS_H
 
@@ -38,4 +39,6 @@ int		ft_strlen(char *str);
 
 int		ft_atoi(char *str);
 
-#endif // UTILS_H 
+int		ft_str_is_printable(char *str);
+
+#endif // UTILS_H

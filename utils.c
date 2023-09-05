@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ovasconc <otaviocavasc2@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 13:28:18 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 16:44:04 by rnogueir         ###   ########.org.br   */
+/*   Updated: 2023/09/05 17:24:31 by ovasconc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putcharfd(char c, int fd)
 
 void	ft_putstrfd(char *str, int fd)
 {
-	while(*str)
+	while (*str)
 	{
 		ft_putcharfd(*str, fd);
 		str++;
@@ -41,20 +41,20 @@ void	ft_putstr(char *str)
 	ft_putstrfd(str, 1);
 }
 
-void	ft_showerror()
+void	ft_showerror(char *str)
 {
-	ft_putstrfd("Error\n", 2);
+	ft_putstrfd(str, 2);
 	exit (1);
 }
 
 int	ft_countlines(char *buff)
 {
-	int lines;
+	int	lines;
 
 	lines = 0;
-	while(*buff)
+	while (*buff)
 	{
-		if(*buff == '\n')
+		if (*buff == '\n')
 			lines++;
 		buff++;
 	}
@@ -63,12 +63,12 @@ int	ft_countlines(char *buff)
 
 static	int ft_countdel(char *str, char del)
 {
-	int count;
+	int	count;
 
 	count = 0;
-	while(*str)
+	while (*str)
 	{
-		if(*str == del)
+		if (*str == del)
 			count++;
 		str++;
 	}
@@ -77,7 +77,7 @@ static	int ft_countdel(char *str, char del)
 
 static	int ft_strlendel(char *str, char del)
 {
-	int idx;
+	int	idx;
 
 	idx = 0;
 	while(str[idx] != '\0' && str[idx] != del)
@@ -138,7 +138,7 @@ int	ft_atoi(char *str)
 	idx = 0;
 	ns = 1;
 	r = 0;
-	while(ft_isspace(*str))
+	while (ft_isspace(*str))
 		str++;
 	while (str[idx] != '\0')
 	{
@@ -150,7 +150,25 @@ int	ft_atoi(char *str)
 			r = (r * 10) + str[idx] - '0';
 		idx += 1;
 	}
-	if(ns % 2 == 0)
+	if (ns % 2 == 0)
 		return (r * -1);
 	return (r);
+}
+
+int	ft_str_is_printable(char *str)
+{
+	int	i;
+	int	printable;
+
+	i = 0;
+	printable = 1;
+	while (str[i])
+	{
+		if (str[i] < 32 || str[i] > 126)
+		{
+			printable = 0;
+		}
+		i++;
+	}
+	return (printable);
 }
