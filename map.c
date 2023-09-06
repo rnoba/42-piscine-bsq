@@ -6,7 +6,7 @@
 /*   By: rnogueir <rnogueir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 19:32:10 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 20:07:02 by rnogueir         ###   ########.org.br   */
+/*   Updated: 2023/09/05 22:41:12 by rnogueir         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,34 +37,32 @@ void	ft_read(int fd, char *buff)
 void	ft_printmap(char **m)
 {
 	while(*m != 0)
-	{
-		ft_putstr(*m);
-		ft_putstr("\n");
+	{ ft_putstr(*m); ft_putstr("\n");
 		m++;
 	}
 }
 
-static	int	ft_canexpand(char **map, char obs, int size, int i, int j)
+static	int	ft_canexpand(s_mapstate *s, int size, int i, int j)
 {
 	int	x;
 
 	x = 0;
-	if (map[i][j] == obs)
-		return 0;
-	if(i + size - 1 > 499 || j + size - 1 > 499)
+	if (s->map[i][j] == s->obstacle)
+		return (0);
+	if(i + size - 1 > s->lines - 1 || j + size - 1 > s->cols - 1)
 		return (0);
 	while (x < size)
 	{
-		if (map[i + size - 1][j + x] == obs)
+		if (s->map[i + size - 1][j + x] == s->obstacle)
 			return (0);
-		if (map[i + x][j + size - 1] == obs)
+		if (s->map[i + x][j + size - 1] == s->obstacle)
 			return (0);
 		x++;
 	}
 	return (1);
 }
 
-void	ft_drawsquare(char **map, int i, int j, int size)
+void	ft_drawsquare(s_mapstate* s, int i, int j, int size)
 {
 	
 	int col;
@@ -77,14 +75,14 @@ void	ft_drawsquare(char **map, int i, int j, int size)
 		j = col;
 		while(j < (col + size))
 		{
-			map[i][j] = '#';
+			s->map[i][j] = s->full;
 			j++;
 		}
 		i++;
 	}
 }
 
-static	void ft_solve_rec(char **map, s_mapstate *s)
+static	void ft_solve(s_mapstate *s)
 {
 	int size;
 	int highest;
@@ -103,7 +101,7 @@ static	void ft_solve_rec(char **map, s_mapstate *s)
 		while(j < s->cols)
 	
 		{
-			while(ft_canexpand(map, s->obstacle, size, i, j))
+			while(ft_canexpand(s, size, i, j))
 			{
 				size++;
 			}
@@ -118,27 +116,11 @@ static	void ft_solve_rec(char **map, s_mapstate *s)
 		}
 		i++;
 	}
-	ft_drawsquare(map, h_i, h_j, highest - 1);
+	ft_drawsquare(s, h_i, h_j, highest - 1);
 }
 
-void	ft_solve(char **map)
+void	ft_show_solution(s_mapstate *state)
 {
-	int size = ft_atoi(map[0]);
-	s_mapstate* state;
-	int	c = 0;
-	int sizec = size;
-	state = malloc(sizeof(s_mapstate));
-	while(sizec > 0)
-	{
-		c++;
-		sizec /= 10;
-	}
-	state->empty = (map[0][c]);
-	state->obstacle = (map[0][c + 1]);
-	state->full = (map[0][c + 2]);
-	state->lines = size;
-	map++;
-	state->cols = ft_strlen(map[0]);
-	ft_solve_rec(map, state);
-	ft_printmap(map);
+	ft_solve(state);
+	ft_printmap(state->map);
 }

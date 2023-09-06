@@ -6,11 +6,10 @@
 /*   By: ovasconc <otaviocavasc2@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:13:30 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 17:51:06 by ovasconc         ###   ########.fr       */
+/*   Updated: 2023/09/05 22:40:51 by rnogueir         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "validators.h"
 
 static int	check_map_size(char **map)
@@ -89,4 +88,21 @@ int	ft_is_valid_map(char **map)
 			&& check_map_size(map) && check_map_chars(map)))
 		ft_showerror("map error\n");
 	return (1);
+}
+
+s_mapstate*	ft_read_map(char **map)
+{
+	s_mapstate	*state;
+	int	flinelen;
+
+	state = malloc(sizeof(s_mapstate));
+	flinelen = ft_strlen(map[0]);
+	state->lines = ft_atoi(map[0]);
+	state->cols = ft_strlen(map[1]);
+	state->empty = map[0][flinelen - 3];
+	state->obstacle = map[0][flinelen - 2];
+	state->full = map[0][flinelen - 1];
+	map++;
+	state->map = map;
+	return (state);	
 }
