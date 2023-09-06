@@ -6,7 +6,7 @@
 /*   By: ovasconc <otaviocavasc2@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 13:28:18 by rnogueir          #+#    #+#             */
-/*   Updated: 2023/09/05 17:24:31 by ovasconc         ###   ########.fr       */
+/*   Updated: 2023/09/05 23:04:24 by ovasconc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ char **ft_split(char *str, char del)
 	while(idx < len && str[l] != '\0')
 	{
 		s = 0;
-		split[idx] = malloc(sizeof(char) * ft_strlendel((&str[l]), del));
+		split[idx] = malloc(sizeof(char) * ft_strlendel((&str[l]), del) + 1);
 		while(str[l] != '\0' && str[l] != del)
 		{
 			split[idx][s] = str[l];
